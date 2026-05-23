@@ -1,0 +1,6 @@
+{
+  "name": "검은사막 피드백 게시판",
+  "description": "검은사막 공식 홈페이지 스타일의 피드백 게시판으로, 유저들의 건의 사항 및 논의 진행 상황을 투명하게 확인하고 소통할 수 있는 피드백 포럼입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
