@@ -43,3 +43,9 @@ export interface FeedbackItem {
     date: string;
   } | null;
 }
+
+export interface User {
+  username: string;
+  is_gm: boolean;
+  profile_img?: string;
+}

@@ -1,18 +1,19 @@
 import React from 'react';
-import { Plus, Shield, RotateCcw } from 'lucide-react';
+import { Plus, Shield } from 'lucide-react';
+import { User } from '../types/feedback';
 
 interface HeaderProps {
   onWriteClick: () => void;
-  isAdminMode: boolean;
-  setIsAdminMode: (admin: boolean) => void;
-  onResetDatabase: () => void;
+  currentUser: User | null;
+  usersList: User[];
+  onUserChange: (username: string) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   onWriteClick,
-  isAdminMode,
-  setIsAdminMode,
-  onResetDatabase
+  currentUser,
+  usersList,
+  onUserChange
 }) => {
   return (
     <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">

@@ -105,26 +105,11 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({
             </div>
           </div>
 
-          {/* Dynamic status or Select option */}
+          {/* Dynamic status */}
           <div className="min-w-[92px] text-right sm:ml-auto">
-            {isAdminMode && item.type !== 'noti' ? (
-              <div className="relative inline-block text-left" onClick={(e) => e.stopPropagation()}>
-                <select
-                  value={item.status}
-                  onChange={(e) => onAdminStatusChange(item.id, Number(e.target.value) as ProcessStatus)}
-                  className="text-[11px] font-bold border border-slate-300 rounded px-1.5 py-1 bg-white text-slate-700 focus:outline-none cursor-pointer"
-                >
-                  <option value={ProcessStatus.DISCUSSING}>논의중</option>
-                  <option value={ProcessStatus.IN_PROGRESS}>진행중</option>
-                  <option value={ProcessStatus.APPLIED}>적용 완료</option>
-                  <option value={ProcessStatus.REVIEW_COMPLETE}>검토 완료</option>
-                </select>
-              </div>
-            ) : (
-              <span className={`inline-flex w-[92px] items-center justify-center px-0 py-1.5 font-semibold rounded-xl text-xs border ${statusStyle.bg} ${statusStyle.text} ${statusStyle.border}`}>
-                {getStatusLabel(item.status)}
-              </span>
-            )}
+            <span className={`inline-flex w-[92px] items-center justify-center px-0 py-1.5 font-semibold rounded-xl text-xs border ${statusStyle.bg} ${statusStyle.text} ${statusStyle.border}`}>
+              {getStatusLabel(item.status)}
+            </span>
           </div>
 
         </div>

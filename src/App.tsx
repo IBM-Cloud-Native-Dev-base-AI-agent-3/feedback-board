@@ -36,9 +36,14 @@ export default function App() {
     setSelectedItem,
     reactiveSelectedItem,
     isAdminMode,
-    setIsAdminMode,
     isWriteModalOpen,
     setIsWriteModalOpen,
+    isLoading,
+
+    // Simulated User Login
+    currentUser,
+    usersList,
+    onUserChange,
     
     // Write Form State
     newTitle,
@@ -72,7 +77,6 @@ export default function App() {
     toastMessage,
     
     // Actions
-    handleResetDatabase,
     toggleSympathy,
     deleteItem,
     handleAddComment,
@@ -99,9 +103,9 @@ export default function App() {
         {/* Header Component */}
         <Header 
           onWriteClick={() => setIsWriteModalOpen(true)}
-          isAdminMode={isAdminMode}
-          setIsAdminMode={setIsAdminMode}
-          onResetDatabase={handleResetDatabase}
+          currentUser={currentUser}
+          usersList={usersList}
+          onUserChange={onUserChange}
         />
 
         {/* Board Main List Interface */}
@@ -123,7 +127,13 @@ export default function App() {
 
           {/* Cards List Area */}
           <div className="space-y-2">
-            {paginatedItems.length === 0 ? (
+            {isLoading ? (
+              <div className="flex flex-col gap-2 py-4">
+                {[1, 2, 3, 4, 5].map(i => (
+                  <div key={i} className="animate-pulse bg-slate-50 border border-slate-200/50 h-20 rounded-xl w-full" />
+                ))}
+              </div>
+            ) : paginatedItems.length === 0 ? (
               <div className="bg-white border border-slate-100 rounded-xl p-12 text-center shadow-xs">
                 <SlidersHorizontal className="w-10 h-10 text-slate-300 mx-auto mb-3" />
                 <h3 className="text-base font-semibold text-slate-700 mb-1">일치하는 목록이 존재하지 않습니다.</h3>
