@@ -104,6 +104,9 @@ export default function App() {
           onUserChange={onUserChange}
         />
 
+        {/* Divider Line */}
+        <hr className="border-slate-200/80 my-6" />
+
         {/* Board Main List Interface */}
         <div className="space-y-4">
           
