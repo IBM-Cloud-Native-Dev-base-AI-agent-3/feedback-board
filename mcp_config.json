@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "supabase-db": {
+      "command": "/opt/homebrew/bin/node",
+      "args": [
+        "/Users/jc.kim/Desktop/feedback-board/node_modules/@modelcontextprotocol/server-postgres/dist/index.js",
+        "postgresql://postgres:0XmTe7dhrnLhT3DA@db.hphnpjuwvnfxqhniwdkp.supabase.co:5432/postgres"
+      ]
+    }
+  }
+}
