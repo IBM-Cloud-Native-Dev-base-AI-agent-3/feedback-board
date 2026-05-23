@@ -23,7 +23,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   filteredItemsCount
 }) => {
   return (
-    <div className="max-w-xl mx-auto pt-6">
+    <div className="max-w-xl pb-2">
       <form 
         onSubmit={onSearchSubmit} 
         className="flex gap-1.5 bg-white p-1.5 rounded-xl border border-slate-200 shadow-xs focus-within:border-slate-400 focus-within:ring-1 focus-within:ring-slate-350 transition-all"
@@ -68,7 +68,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       </form>
 
       {searchQuery && (
-        <p className="text-center text-[11px] text-slate-400 mt-2.5">
+        <p className="text-left text-[11px] text-slate-400 mt-2.5 px-2">
           검색 조건: &apos;<span className="text-slate-800 font-semibold">{searchQuery}</span>&apos; 결과 {filteredItemsCount}건
         </p>
       )}

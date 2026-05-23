@@ -107,6 +107,18 @@ export default function App() {
         {/* Board Main List Interface */}
         <div className="space-y-4">
           
+          {/* Search Bar Component */}
+          <SearchBar 
+            searchType={searchType}
+            setSearchType={setSearchType}
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+            searchQuery={searchQuery}
+            onSearchSubmit={triggerSearch}
+            onClearSearch={clearSearch}
+            filteredItemsCount={filteredItems.length}
+          />
+
           {/* Filter Bar Component */}
           <FilterBar 
             activeStatus={activeStatus}
@@ -196,18 +208,6 @@ export default function App() {
               </button>
             </div>
           )}
-
-          {/* Search Bar Component */}
-          <SearchBar 
-            searchType={searchType}
-            setSearchType={setSearchType}
-            searchInput={searchInput}
-            setSearchInput={setSearchInput}
-            searchQuery={searchQuery}
-            onSearchSubmit={triggerSearch}
-            onClearSearch={clearSearch}
-            filteredItemsCount={filteredItems.length}
-          />
 
         </div>
 
