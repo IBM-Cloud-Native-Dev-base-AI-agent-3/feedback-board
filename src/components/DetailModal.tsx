@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, ThumbsUp, Heart, MessageSquare, BookOpen, AlertTriangle, Shield } from 'lucide-react';
-import { FeedbackItem, ProcessStatus } from '../types';
+import { FeedbackItem, ProcessStatus } from '../types/feedback';
 import { getStatusLabel, getStatusStyle } from '../hooks/useFeedback';
 
 interface DetailModalProps {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { FeedbackItem, ProcessStatus, Comment } from '../types';
-import { INITIAL_FEEDBACK_ITEMS } from '../seedData';
+import { FeedbackItem, ProcessStatus, Comment } from '../types/feedback';
+import { INITIAL_FEEDBACK_ITEMS } from '../data/seedData';
 
 // Format count helper
 export const formatViews = (views: number): string => {

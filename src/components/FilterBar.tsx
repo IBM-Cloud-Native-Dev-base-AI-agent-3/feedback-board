@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
-import { ProcessStatus } from '../types';
+import { ProcessStatus } from '../types/feedback';
 import { SortType } from '../hooks/useFeedback';
 
 interface FilterBarProps {

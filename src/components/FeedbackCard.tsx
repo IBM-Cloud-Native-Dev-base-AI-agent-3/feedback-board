@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
-import { FeedbackItem, ProcessStatus } from '../types';
+import { FeedbackItem, ProcessStatus } from '../types/feedback';
 import { formatViews, getStatusLabel, getStatusStyle } from '../hooks/useFeedback';
 
 interface FeedbackCardProps {

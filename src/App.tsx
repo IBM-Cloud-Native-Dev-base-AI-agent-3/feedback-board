@@ -1,7 +1,7 @@
 import React from 'react';
 import { SlidersHorizontal } from 'lucide-react';
 import { useFeedback } from './hooks/useFeedback';
-import { ProcessStatus } from './types';
+import { ProcessStatus } from './types/feedback';
 import { Header } from './components/Header';
 import { FilterBar } from './components/FilterBar';
 import { FeedbackCard } from './components/FeedbackCard';

@@ -1,4 +1,4 @@
-import { FeedbackItem, ProcessStatus } from './types';
+import { FeedbackItem, ProcessStatus } from '../types/feedback';
 
 export const INITIAL_FEEDBACK_ITEMS: FeedbackItem[] = [
   {
