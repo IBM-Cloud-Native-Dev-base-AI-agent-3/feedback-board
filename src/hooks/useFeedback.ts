@@ -29,8 +29,7 @@ export const getStatusLabel = (status: ProcessStatus) => {
     case ProcessStatus.IN_PROGRESS: return "진행중";
     case ProcessStatus.APPLIED: return "적용 완료";
     case ProcessStatus.REVIEW_COMPLETE: return "검토 완료";
-    case ProcessStatus.NONE: return "-";
-    default: return "전체";
+    default: return "알 수 없음";
   }
 };
 
@@ -85,7 +84,6 @@ const mapDbItemToFeedback = (dbItem: any): FeedbackItem => {
   return {
     id: dbItem.id,
     type: dbItem.type,
-    category: dbItem.category,
     title: dbItem.title,
     description: dbItem.description,
     author: authorInfo.username,
@@ -150,11 +148,9 @@ export function useFeedback() {
   // Form states for creating a new feedback post
   const [isWriteModalOpen, setIsWriteModalOpen] = useState<boolean>(false);
   const [newTitle, setNewTitle] = useState<string>('');
-  const [newCategory, setNewCategory] = useState<string>('[건의 게시판]');
   const [newAuthor, setNewAuthor] = useState<string>('모험가님');
   const [newDescription, setNewDescription] = useState<string>('');
   const [newTagsString, setNewTagsString] = useState<string>('#편의성, #콘텐츠');
-  const [newClassAvatar, setNewClassAvatar] = useState<string>('ranger');
 
   // Comment input state (for detail modal)
   const [commentAuthor, setCommentAuthor] = useState<string>('모험가');
@@ -508,7 +504,6 @@ export function useFeedback() {
         .insert({
           id: newPostId,
           type: 'normal',
-          category: newCategory,
           title: newTitle,
           description: newDescription,
           author_username: currentUser.username,
@@ -717,16 +712,12 @@ export function useFeedback() {
     // Write Form State
     newTitle,
     setNewTitle,
-    newCategory,
-    setNewCategory,
     newAuthor,
     setNewAuthor,
     newDescription,
     setNewDescription,
     newTagsString,
     setNewTagsString,
-    newClassAvatar,
-    setNewClassAvatar,
     
     // Comment Form State
     commentAuthor,

@@ -48,16 +48,12 @@ export default function App() {
     // Write Form State
     newTitle,
     setNewTitle,
-    newCategory,
-    setNewCategory,
     newAuthor,
     setNewAuthor,
     newDescription,
     setNewDescription,
     newTagsString,
     setNewTagsString,
-    newClassAvatar,
-    setNewClassAvatar,
     
     // Comment Form State
     commentAuthor,
@@ -248,10 +244,6 @@ export default function App() {
         <WriteModal 
           isOpen={isWriteModalOpen}
           onClose={() => setIsWriteModalOpen(false)}
-          newCategory={newCategory}
-          setNewCategory={setNewCategory}
-          newClassAvatar={newClassAvatar}
-          setNewClassAvatar={setNewClassAvatar}
           newAuthor={newAuthor}
           setNewAuthor={setNewAuthor}
           newTitle={newTitle}

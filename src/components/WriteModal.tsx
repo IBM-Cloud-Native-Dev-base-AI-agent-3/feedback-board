@@ -4,10 +4,6 @@ import { X } from 'lucide-react';
 interface WriteModalProps {
   isOpen: boolean;
   onClose: () => void;
-  newCategory: string;
-  setNewCategory: (val: string) => void;
-  newClassAvatar: string;
-  setNewClassAvatar: (val: string) => void;
   newAuthor: string;
   setNewAuthor: (val: string) => void;
   newTitle: string;
@@ -22,10 +18,6 @@ interface WriteModalProps {
 export const WriteModal: React.FC<WriteModalProps> = ({
   isOpen,
   onClose,
-  newCategory,
-  setNewCategory,
-  newClassAvatar,
-  setNewClassAvatar,
   newAuthor,
   setNewAuthor,
   newTitle,
@@ -59,52 +51,15 @@ export const WriteModal: React.FC<WriteModalProps> = ({
         {/* Submitting form body */}
         <form onSubmit={onSubmit} className="p-6 md:p-8 space-y-6 flex-1 overflow-y-auto">
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            {/* Category select block */}
-            <div className="space-y-1">
-              <label className="text-xs font-bold text-slate-700 block">포럼 게시판 분류:</label>
-              <select
-                value={newCategory}
-                onChange={(e) => setNewCategory(e.target.value)}
-                className="w-full bg-white border border-slate-200 hover:border-slate-300 rounded-lg p-2 text-xs text-slate-800 focus:outline-none"
-              >
-                <option value="[건의 게시판]">[건의 게시판]</option>
-                <option value="[대양 건의]">[대양 건의]</option>
-                <option value="[길드 소통]">[길드 소통]</option>
-                <option value="[공지사항]">[공지사항]</option>
-              </select>
-            </div>
-
-            {/* Character avatar select block */}
-            <div className="space-y-1">
-              <label className="text-xs font-bold text-slate-700 block">모험가 대표 가문 클래스:</label>
-              <select
-                value={newClassAvatar}
-                onChange={(e) => setNewClassAvatar(e.target.value)}
-                className="w-full bg-white border border-slate-200 hover:border-slate-300 rounded-lg p-2 text-xs text-slate-800 focus:outline-none"
-              >
-                <option value="ranger">레인저</option>
-                <option value="warrior">워리어</option>
-                <option value="witch">위치</option>
-                <option value="mystic">미스틱</option>
-                <option value="ninja">닌자</option>
-                <option value="sorceress">소서러</option>
-                <option value="maegu">매구</option>
-              </select>
-            </div>
-
-            <div className="space-y-1 sm:col-span-2">
-              <label className="text-xs font-bold text-slate-700 block">작성 가문명 명소:</label>
-              <input
-                type="text"
-                value={newAuthor}
-                onChange={(e) => setNewAuthor(e.target.value)}
-                placeholder="자신의 가문명을 입력하세요."
-                className="w-full bg-white border border-slate-200 hover:border-slate-300 rounded-lg p-2 text-xs text-slate-800 focus:outline-none font-semibold"
-              />
-            </div>
-
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-slate-700 block">작성자 이름:</label>
+            <input
+              type="text"
+              value={newAuthor}
+              onChange={(e) => setNewAuthor(e.target.value)}
+              placeholder="작성자 이름을 입력하세요."
+              className="w-full bg-white border border-slate-200 hover:border-slate-300 rounded-lg p-2 text-xs text-slate-800 focus:outline-none font-semibold"
+            />
           </div>
 
           <div className="space-y-1">

@@ -8,8 +8,7 @@ export enum ProcessStatus {
   DISCUSSING = 1,
   IN_PROGRESS = 2,
   APPLIED = 3,
-  REVIEW_COMPLETE = 4,
-  NONE = 0
+  REVIEW_COMPLETE = 4
 }
 
 export interface Comment {
@@ -23,7 +22,6 @@ export interface Comment {
 export interface FeedbackItem {
   id: string; // matches topicNo / visitNo
   type: 'noti' | 'normal';
-  category: string; // e.g. '[건의 게시판]'
   title: string;
   description: string;
   author: string;
